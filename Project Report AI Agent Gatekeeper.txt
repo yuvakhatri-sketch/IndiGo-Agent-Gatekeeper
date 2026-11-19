@@ -1,0 +1,63 @@
+ AGENT GATEKEEPER – PROJECT REPORT
+
+Student Enrolment Number: PGD202572730  
+Company Selected: IndiGo Airlines  
+Project:AI Agent Gatekeeper Prototype
+
+1. Introduction and Problem Statement
+IndiGo Airlines provides online services such as fare viewing, flight booking, ticket modification and refunds. AI agents could help customers perform these tasks more efficiently. However, an agent acting without proper permission could make unauthorized bookings, changes or refund requests.
+The Agent Gatekeeper prototype addresses this problem by checking an AI agent's registration, authorization, permitted actions and transaction amount before allowing a request. It produces one of three decisions: ALLOW, ASK CUSTOMER or BLOCK. It also records decisions and agent revocations in an audit trail.
+
+2. Business Security Rules
+| Rule | Business rule | Decision |
+|---|---|---|
+| R1 | An unregistered agent cannot perform any action. | BLOCK |
+| R2 | A revoked agent cannot perform any action. | BLOCK |
+| R3 | An agent cannot perform an action outside its permitted permissions. | BLOCK |
+| R4 | An authorized agent may view flight fares. | ALLOW |
+| R5 | An authorized agent may book tickets costing ₹10,000 or less. | ALLOW |
+| R6 | An authorized booking above ₹10,000 requires customer confirmation. | ASK CUSTOMER |
+| R7 | Authorized ticket changes and refund requests require customer confirmation. | ASK CUSTOMER |
+Reason for the spending limit: The ₹10,000 threshold is an illustrative safety limit for this prototype. It permits routine lower-value bookings while requiring customer approval for higher-value transactions. It is not represented as an official IndiGo limit.
+
+3. Prototype and Implementation
+
+The prototype was developed using Python and Streamlit with Antigravity as the coding assistant. It includes agent registration, permission management, agent revocation, request evaluation and an audit history.
+
+Each request is checked against the seven rules. The system records the decision, reason, applicable rule and timestamp. Revoked agents are blocked even if they previously had permission.
+
+The prototype is an educational simulation. It is not connected to IndiGo's actual reservation, payment or refund systems.
+
+4. Testing and Results
+
+Seven test cases were executed in the application. All seven displayed PASS.
+
+| Test | Scenario | Expected result | Actual result |
+|---|---|---|---|
+| TC-01 | Unknown agent attempts booking | BLOCK (R1) | BLOCK – PASS |
+| TC-02 | Revoked agent attempts fare viewing | BLOCK (R2) | BLOCK – PASS |
+| TC-03 | Agent attempts unauthorized booking | BLOCK (R3) | BLOCK – PASS |
+| TC-04 | Authorized agent views fares | ALLOW (R4) | ALLOW – PASS |
+| TC-05 | Authorized booking of ₹7,500 | ALLOW (R5) | ALLOW – PASS |
+| TC-06 | Authorized booking of ₹16,800 | ASK CUSTOMER (R6) | ASK CUSTOMER – PASS |
+| TC-07 | Authorized refund request of ₹4,200 | ASK CUSTOMER (R7) | ASK CUSTOMER – PASS |
+
+**Test outcome:** 7 out of 7 test cases passed in the application's displayed verification suite.
+
+5. Benefits and Risks of Blocking AI Agents Completely
+
+Completely blocking AI agents can reduce unauthorized transactions, protect customer information and prevent mistakes caused by agents acting beyond their permissions. However, a complete ban can also reduce convenience, automation and accessibility for customers who benefit from AI assistance. A permission-based gatekeeper is a more balanced approach: it allows low-risk activities, blocks unauthorized requests and asks customers to confirm sensitive actions.
+
+6. Conclusion
+
+The IndiGo Agent Gatekeeper prototype demonstrates how business rules can control AI agent activities. Registration, permissions, revocation, transaction limits and audit logs provide a basic governance framework. The seven displayed test cases passed, demonstrating the prototype's intended decision-making behaviour. Further development would be needed before any real airline integration.
+
+7. References
+
+1. IndiGo, *Ticket Modifications*. https://www.goindigo.in/travel-information/en/ticket-modifications.html
+
+2. IndiGo, *Refunds FAQs and Support*. https://www.goindigo.in/travel-information/en/refunds.html
+
+3. Crosman, P. (2 November 2026). *Wells Fargo wants customers to prove they've revoked AI agents*. American Banker, reproduced by Yahoo Finance. https://finance.yahoo.com/technology/ai/articles/wells-fargo-wants-customers-prove-171014157.html
+
+4. Government of India, Rajya Sabha. (23 March 2026). *Statement regarding the new ticket refund and cancellation framework*. https://sansad.in/getFile/annex/270/AS324_rSvfQO.pdf?source=pqars

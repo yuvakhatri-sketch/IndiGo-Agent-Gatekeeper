@@ -1,0 +1,107 @@
+[
+    {
+        "agent_id": "6E-AGT-101",
+        "agent_name": "IndiGoBot-Alpha",
+        "customer_name": "Aarav Sharma",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "ACTIVE",
+        "registered_at": "2026-11-18 10:15:00",
+        "revoked_at": null,
+        "notes": "Primary travel booking assistant"
+    },
+    {
+        "agent_id": "6E-AGT-102",
+        "agent_name": "TravelMate-6E",
+        "customer_name": "Ananya Iyer",
+        "permitted_actions": [
+            "View Fares",
+            "Book",
+            "Change",
+            "Refund"
+        ],
+        "status": "ACTIVE",
+        "registered_at": "2026-11-18 11:30:00",
+        "revoked_at": null,
+        "notes": "Full-service VIP corporate assistant"
+    },
+    {
+        "agent_id": "6E-AGT-103",
+        "agent_name": "FareWatcher-AI",
+        "customer_name": "Rohan Verma",
+        "permitted_actions": [
+            "View Fares"
+        ],
+        "status": "ACTIVE",
+        "registered_at": "2026-11-19 09:00:00",
+        "revoked_at": null,
+        "notes": "Restricted read-only price monitor"
+    },
+    {
+        "agent_id": "6E-AGT-104",
+        "agent_name": "SkyRevoked-Bot",
+        "customer_name": "Priya Patel",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "REVOKED",
+        "registered_at": "2026-11-15 14:00:00",
+        "revoked_at": "2026-11-19 18:45:12",
+        "notes": "Revoked by customer following device upgrade"
+    },
+    {
+        "agent_id": "6E-AGT-105",
+        "agent_name": "khatribotttt",
+        "customer_name": "khatri",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "ACTIVE",
+        "registered_at": "2026-11-20 01:43:47",
+        "revoked_at": null,
+        "notes": ""
+    },
+    {
+        "agent_id": "6E-AGT-106",
+        "agent_name": "yuvrajbot",
+        "customer_name": "yuvraj",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "REVOKED",
+        "registered_at": "2026-11-20 01:47:50",
+        "revoked_at": "2026-11-20 01:48:31",
+        "notes": ""
+    },
+    {
+        "agent_id": "6E-AGT-107",
+        "agent_name": "yuvrajbott",
+        "customer_name": "yuva",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "REVOKED",
+        "registered_at": "2026-11-20 01:50:54",
+        "revoked_at": "2026-11-20 01:54:35",
+        "notes": ""
+    },
+    {
+        "agent_id": "6E-AGT-108",
+        "agent_name": "funtobot",
+        "customer_name": "funto",
+        "permitted_actions": [
+            "View Fares",
+            "Book"
+        ],
+        "status": "ACTIVE",
+        "registered_at": "2026-11-20 01:52:20",
+        "revoked_at": null,
+        "notes": ""
+    }
+]
