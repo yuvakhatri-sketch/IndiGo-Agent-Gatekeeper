@@ -25,3 +25,17 @@ The automated unit tests were also run during development.
 Limitation
 This is a demonstration prototype using sample data.
 It does not connect to IndiGo's live booking or payment systems.
+Testing Notes
+
+The application was tested using seven live test scenarios.
+
+Results:
+- Unknown agent: BLOCK
+- Revoked agent: BLOCK
+- Unauthorized action: BLOCK
+- Authorized fare viewing: ALLOW
+- Booking within limit: ALLOW
+- Booking above limit: ASK CUSTOMER
+- Refund request: ASK CUSTOMER
+
+All seven displayed test scenarios passed.
