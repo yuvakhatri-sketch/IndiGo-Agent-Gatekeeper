@@ -139,3 +139,26 @@ The application includes an interactive test runner in the **"🧪 Test Cases & 
 - This project was developed as a college assignment.
 - All airline data, agent identifiers, and passenger records are simulated sample data.
 - No live connections to IndiGo Airlines production APIs or real financial gateways are made.
+- ---
+
+## Security Rules and Decision Logic
+
+The Gatekeeper follows seven rules:
+
+| Rule | Condition | Decision |
+|---|---|---|
+| R1 | Unknown agent | BLOCK |
+| R2 | Revoked agent | BLOCK |
+| R3 | Unauthorized action | BLOCK |
+| R4 | Authorized fare viewing | ALLOW |
+| R5 | Booking up to ₹10,000 | ALLOW |
+| R6 | Booking above ₹10,000 | ASK CUSTOMER |
+| R7 | Authorized change or refund | ASK CUSTOMER |
+
+### Spending Limit
+
+The ₹10,000 threshold is an illustrative limit selected for this prototype. It allows routine lower-value bookings while requiring customer confirmation for higher-value transactions. It is not an official IndiGo policy.
+
+### Prototype Limitation
+
+All records and transactions use sample data. The prototype does not connect to live airline booking or payment systems.
