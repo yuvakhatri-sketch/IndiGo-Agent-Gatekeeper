@@ -162,3 +162,15 @@ The ₹10,000 threshold is an illustrative limit selected for this prototype. It
 ### Prototype Limitation
 
 All records and transactions use sample data. The prototype does not connect to live airline booking or payment systems.
+---
+
+## Customer Confirmation Process
+
+When the system returns ASK CUSTOMER, the requested action is not automatically executed.
+
+1. The customer is asked to review the requested action and amount.
+2. The customer can approve or reject the request.
+3. The decision must be recorded in the audit trail.
+4. If the customer does not approve, the action remains unexecuted.
+
+This human-in-the-loop process helps prevent unintended bookings, refunds, and financial transactions.
